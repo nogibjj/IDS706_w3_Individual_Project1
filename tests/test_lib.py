@@ -46,14 +46,22 @@ def test_general_summary(test_mock, mocker):
     mock_print.assert_called_once_with(test_mock)
 
 def test_plot_histogram(test_mock, mocker):
-    mock_hist = mocker.patch("tests.test_lib.plot_histogram")
+    # mock_hist = mocker.patch("tests.test_lib.plot_histogram")
+    # plot_histogram(test_mock)
+    # plot_histogram(test_mock, flag = True)
+    # assert mock_hist.call_count == 2
+    # mock_hist.assert_has_calls([
+    #     mocker.call(test_mock),
+    #     mocker.call(test_mock, flag=True)
+    # ])
+
+    mock_plot_histogram = mocker.patch('tests.test_lib.plot_histogram')
     plot_histogram(test_mock)
-    plot_histogram(test_mock, flag = True)
-    assert mock_hist.call_count == 2
-    mock_hist.assert_has_calls([
-        mocker.call(test_mock),
-        mocker.call(test_mock, flag=True)
-    ])
+    mock_plot_histogram.assert_called_once()
+    mocker.resetall()
+    plot_histogram(test_mock, flag=True)
+    mock_plot_histogram.assert_called_once_with(test_mock, flag=True)
+
 
 def test_plot_boxplot(test_mock, mocker):
     mock_boxplot = mocker.patch("tests.test_lib.plot_boxplot")

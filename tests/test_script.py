@@ -2,7 +2,7 @@ from mylib.main import main_func
 import os, sys
 
 
-def test_main1(mocker):
+def test_main1():
     # Get the directory containing the cli.py script
     # cur_dir = os.path.dirname(os.path.abspath(__file__))
     # PATH = os.path.join(cur_dir, "data", "CardioGoodFitness.csv")
