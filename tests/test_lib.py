@@ -48,37 +48,64 @@ def test_general_summary(test_mock, mocker):
 def test_plot_histogram(test_mock, mocker):
     mock_hist = mocker.patch("tests.test_lib.plot_histogram")
     plot_histogram(test_mock)
-    mock_hist.assert_called_once_with(test_mock)
+    plot_histogram(test_mock, flag = True)
+    assert mock_hist.call_count == 2
+    mock_hist.assert_has_calls([
+        mocker.call(test_mock),
+        mocker.call(test_mock, flag=True)
+    ])
 
 def test_plot_boxplot(test_mock, mocker):
     mock_boxplot = mocker.patch("tests.test_lib.plot_boxplot")
     plot_boxplot(test_mock)
-    mock_boxplot.assert_called_once_with(test_mock)
+    plot_boxplot(test_mock, flag = True)
+    assert mock_boxplot.call_count == 2
+    mock_boxplot.assert_has_calls([
+        mocker.call(test_mock),
+        mocker.call(test_mock, flag=True)
+    ])
 
 def test_plot_crosstab(test_mock, mocker):
     mock_crosstab = mocker.patch("tests.test_lib.plot_crosstab")
     plot_crosstab(test_mock)
     mock_crosstab.assert_called_once_with(test_mock)
+    
 
 def test_plot_count(test_mock, mocker):
     mock_count = mocker.patch("tests.test_lib.plot_count")
     plot_count(test_mock)
-    mock_count.assert_called_once_with(test_mock)
+    plot_count(test_mock, flag = True)
+    assert mock_count.call_count == 2
+    mock_count.assert_has_calls([
+        mocker.call(test_mock),
+        mocker.call(test_mock, flag=True)
+    ])
 
 def test_plot_income(test_mock, mocker):
     mock_income = mocker.patch("tests.test_lib.plot_income")
     plot_income(test_mock)
-    mock_income.assert_called_once_with(test_mock)
+    plot_income(test_mock, flag = True)
+    assert mock_income.call_count == 2
+    mock_income.assert_has_calls([
+        mocker.call(test_mock),
+        mocker.call(test_mock, flag=True)
+    ])
 
 def test_plot_age(test_mock, mocker):
     mock_age = mocker.patch("tests.test_lib.plot_age")
     plot_age(test_mock)
-    mock_age.assert_called_once_with(test_mock)
+    plot_age(test_mock, flag = True)
+    assert mock_age.call_count == 2
+    mock_age.assert_has_calls([
+        mocker.call(test_mock),
+        mocker.call(test_mock, flag=True)
+    ])
 
 def test_plot_miles(test_mock, mocker):
     mock_miles = mocker.patch("tests.test_lib.plot_miles")
     plot_miles(test_mock)
     mock_miles.assert_called_once_with(test_mock)
+    
 
 def test_plot_corr(test_mock, mocker):
     mock_corr = mocker.patch("tests.test_lib.plot_corr")

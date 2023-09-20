@@ -13,6 +13,7 @@ def main_func(PATH, flag):
     # plot_corr(cardio_data)
     # plot_miles(cardio_data)
     print("Use funcitions from lib.py to show the plots. They are in the folder results")
+    return True
 
 # if __name__ == "__main__":
 #     PATH = "../data/CardioGoodFitness.csv"

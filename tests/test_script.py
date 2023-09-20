@@ -14,9 +14,9 @@ def test_main1(mocker):
     sys.path.append(root_dir)
     print("===========================" + root_dir + "===========================")
     PATH = root_dir + "/data/CardioGoodFitness.csv"
-    mock_main = mocker.patch("mylib.main.main_func")
-    main_func(PATH,False)
-    mock_main.assert_called_once()
+    flag = main_func(PATH,False)
+    # mock_main.assert_called_once()
+    assert flag == True
 
 if __name__ == '__main__':
     pass
