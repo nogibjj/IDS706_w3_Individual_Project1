@@ -75,5 +75,6 @@
 
 	// "oryx build" will automatically install your dependencies and attempt to build your project
 	//"postCreateCommand": "oryx build -p virtualenv_name=.venv --log-file /tmp/oryx-build.log --manifest-dir /tmp || echo 'Could not auto-build. Skipping.'"
-	 "postCreateCommand": "bash setup.sh"
+	"postCreateCommand": "bash setup.sh"
+	// "postCreateCommand": "pip install -e /workspaces/IDS706_w3_Individual_Project1"
 }
