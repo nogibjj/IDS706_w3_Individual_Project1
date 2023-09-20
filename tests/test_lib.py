@@ -57,6 +57,7 @@ def test_plot_histogram(test_mock, mocker):
 
 def test_plot_boxplot(test_mock, mocker):
     mock_boxplot = mocker.patch("tests.test_lib.plot_boxplot")
+    
     plot_boxplot(test_mock)
     plot_boxplot(test_mock, flag = True)
     assert mock_boxplot.call_count == 2
@@ -105,7 +106,7 @@ def test_plot_miles(test_mock, mocker):
     mock_miles = mocker.patch("tests.test_lib.plot_miles")
     plot_miles(test_mock)
     mock_miles.assert_called_once_with(test_mock)
-    
+
 
 def test_plot_corr(test_mock, mocker):
     mock_corr = mocker.patch("tests.test_lib.plot_corr")
